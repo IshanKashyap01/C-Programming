@@ -19,3 +19,5 @@ switch (card_name[0])
 ```
 
 - However, `switch` in `C` does not work for strings or arrays of any kind
+
+- The `break` keyword can be used to escape from loops and `switch` but not `if`
