@@ -11,25 +11,15 @@ int main()
     puts("Enter the card name: ");
     scanf("%2s", card_name);
     int val = 0;
-    if(card_name[0] == 'K')
+    switch(card_name[0])
     {
-        val = 10;
-    }
-    else if(card_name[0] == 'Q')
-    {
-        val = 10;
-    }
-    else if(card_name[0] == 'J')
-    {
-        val = 10;
-    }
-    else if(card_name[0] == 'A')
-    {
-        val = 11;
-    }
-    else
-    {
-        val = atoi(card_name);
+        case 'A': val = 11; break;
+        // K and Q will cascade to J
+        case 'K':
+        case 'Q': 
+        case 'J': val = 10; break;
+        
+        default: val = atoi(card_name);
     }
     if(val > 2 && val < 7)
     {
